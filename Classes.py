@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
 from selenium.common.exceptions import (StaleElementReferenceException,
                                        TimeoutException,
                                        UnexpectedAlertPresentException,
@@ -828,7 +829,7 @@ class Crawler:
         successful_xss = set()
 
         # attribute injections
-        attribute_injects = self.driver.find_elements_by_xpath("//*[@jaekpot-attribute]")
+        attribute_injects = self.driver.find_elements(By.XPATH, "//*[@jaekpot-attribute]")
         for attribute in attribute_injects:
             lookup_id = attribute.get_attribute("jaekpot-attribute")
             successful_xss.add(lookup_id)
