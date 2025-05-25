@@ -40,7 +40,7 @@ def extract_urls(driver):
     urls = set()
 
     # Search for urls in <a>
-    elem = driver.find_element(By.TAG_NAME, "a")
+    elem = driver.find_elements(By.TAG_NAME, "a")
     for el in elem:
         try:
             if el.get_attribute("href"):
@@ -53,7 +53,7 @@ def extract_urls(driver):
             print(traceback.format_exc())
 
     # Search for urls in <frame>
-    # elem = driver.find_element(By.TAG_NAME, "frame")
+    # elem = driver.find_elements(By.TAG_NAME, "frame")
     elem = []
     for el in elem:
         try:
@@ -67,7 +67,7 @@ def extract_urls(driver):
             print(traceback.format_exc())
 
     # Search for urls in <iframe>
-    elem = driver.find_element(By.TAG_NAME, "iframe")
+    elem = driver.find_elements(By.TAG_NAME, "iframe")
     for el in elem:
         try:
             if el.get_attribute("src"):
@@ -80,7 +80,7 @@ def extract_urls(driver):
             print(traceback.format_exc())
 
     # Search for urls in <meta>
-    elem = driver.find_element(By.TAG_NAME, "meta")
+    elem = driver.find_elements(By.TAG_NAME, "meta")
     for el in elem:
         try:
             

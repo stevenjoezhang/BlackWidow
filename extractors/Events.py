@@ -71,7 +71,7 @@ def extract_inputs(driver):
 
 
 def extract_fake_buttons(driver):
-    fake_buttons = driver.find_elements_by_class_name("btn") 
+    fake_buttons = driver.find_elements(By.CLASS_NAME, "btn")
     dos = []
     for button in fake_buttons:
 
